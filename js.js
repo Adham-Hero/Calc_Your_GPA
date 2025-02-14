@@ -160,7 +160,6 @@ function getGradeValue(grade) {
 
 function calculateGPA() {
     let totalPoints = 0, totalHours = 0;
-    let letterGrade = "-";
 
     subjectsArray.forEach(subject => {
         if (subject.grade !== null) {
@@ -190,9 +189,30 @@ function calculateGPA() {
     });
 
     let gpa = totalHours > 0 ? (totalPoints / totalHours).toFixed(2) : "-";
-    if (gpa !== "-") {
-        letterGrade = getSubjectMark((parseFloat(gpa) / 4) * 100);
+    let finalGrade;
+
+    if (gpa === "-") {
+        finalGrade = "-";
+    } else {
+        let totalGrade = parseFloat(gpa);
+        if (totalGrade === 4) {
+            finalGrade = "A+";
+        } else if (totalGrade >= 3.7 && totalGrade < 4) {
+            finalGrade = "A";
+        } else if (totalGrade >= 3.4 && totalGrade < 3.7) {
+            finalGrade = "A-";
+        } else if (totalGrade >= 3 && totalGrade < 3.4) {
+            finalGrade = "B+";
+        } else if (totalGrade >= 2.7 && totalGrade < 3) {
+            finalGrade = "B";
+        } else if (totalGrade >= 2.3 && totalGrade < 2.7) {
+            finalGrade = "C+";
+        } else if (totalGrade >= 2 && totalGrade < 2.3) {
+            finalGrade = "C";
+        } else {
+            finalGrade = "F";
+        }
     }
-    
-    document.getElementById("gpaResult").textContent = `${gpa} (${letterGrade})`;
+
+    document.getElementById("gpaResult").textContent = `${gpa} (${finalGrade})`;
 }
