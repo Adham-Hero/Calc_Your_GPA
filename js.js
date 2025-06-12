@@ -10,7 +10,7 @@ const courses = [
     { name: "اللغة الإنجليزية I", hours: 2, level: 1, code: "GEN 101" },
     { name: "اساسيات التمريض II", hours: 3, level: 1, code: "NUR 103",},
     { name: "اساسيات التمريض II (عملي)", hours: 3, level: 1, code: "CLN 102",},
-    { name: "المعلوماتية وتكنولوجيا التعليم في التمريض", hours: 2, level: 1,},
+    { name: "المعلوماتية وتكنولوجيا التعليم في التمريض", hours: 2, level: 1, code: "NUR 104",},
     { name: "مهارات التواصل في التمريض", hours: 2, level: 1, code: "NUR 105",},
     { name: "الرعاية التمريضية الشاملة", hours: 2, level: 1, code: "NUR 106",},
     { name: "علم الأدوية", hours: 2, level: 1, code: "MED 105", },
