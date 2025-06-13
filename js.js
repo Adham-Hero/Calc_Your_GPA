@@ -91,7 +91,7 @@ function addSubject() {
     let selectedCourse = courses.find(course => course.code === subjectCode);
 
     if (!selectedCourse) {
-        alert("المادة غير موجودة!");
+        alert("يرجي تبليغ مطور أدهم ان المادة غير موجودة!");
         return;
     }
 
