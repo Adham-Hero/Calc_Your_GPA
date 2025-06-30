@@ -28,6 +28,7 @@ const courses = [
     { name: "جراحة عامة", hours: 2, level: 2, code: "MED 203" },
     { name: "أدوية تطبيقية", hours: 2, level: 2, code: "MED 204" },
     { name: "إجهاد الأعصاب", hours: 2, level: 2, code: "SUP 203" },
+    { name: "مبادئ إحصاء", hours: 2, level: 2, code: "SUP 203" },
     { name: "سيادة الأعمال", hours: 2, level: 2, code: "GEN 202" },
     { name: "تمريض النساء والولادة", hours: 3, level: 3, code: "NUR 301" },
     { name: "تمريض النساء والولادة (عملي)", hours: 4, level: 3, code: "CLN 301" },
