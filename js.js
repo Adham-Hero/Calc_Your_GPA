@@ -216,3 +216,33 @@ function calculateGPA() {
 
     document.getElementById("gpaResult").textContent = `${gpa} (${finalGrade})`;
 }
+
+function showCumulativeBox() {
+    document.getElementById("mainBox").classList.add("hidden");
+    document.getElementById("cumulativeBox").classList.remove("hidden");
+    document.getElementById("cumulativeResultBox").classList.add("hidden");
+}
+
+function backToMain() {
+    document.getElementById("mainBox").classList.remove("hidden");
+    document.getElementById("cumulativeBox").classList.add("hidden");
+}
+
+function calculateCumulative() {
+    let prevGPA = parseFloat(document.getElementById("prevGPA").value) || 0;
+    let prevHours = parseFloat(document.getElementById("prevHours").value) || 0;
+    let currentGPA = parseFloat(document.getElementById("currentGPA").value) || 0;
+    let currentHours = parseFloat(document.getElementById("currentHours").value) || 0;
+
+    let totalHours = prevHours + currentHours;
+
+    if (totalHours === 0) {
+        document.getElementById("cumulativeResult").textContent = "خطأ في البيانات";
+    } else {
+        let totalPoints = (prevGPA * prevHours) + (currentGPA * currentHours);
+        let cumulative = (totalPoints / totalHours).toFixed(2);
+        document.getElementById("cumulativeResult").textContent = cumulative;
+    }
+
+    document.getElementById("cumulativeResultBox").classList.remove("hidden");
+}
