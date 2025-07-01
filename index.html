@@ -8,23 +8,55 @@
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <div class="container-box">
+    <div id="mainBox" class="container-box">
         <h3 class="text-center">احسب الـ GPA</h3>
         <div class="mb-3">
             <label for="subject" class="form-label">اختر المادة:</label>
             <select id="subjectSelect" class="form-select">
-                                <option value="" disabled selected hidden>اختر المادة</option>
+                <option value="" disabled selected hidden>اختر المادة</option>
             </select>
         </div>
-        <button class="btn btn-secondary w-100" onclick="addSubject()">اضف المادة</button>
+        <button class="btn btn-secondary w-100 mb-3" onclick="addSubject()">اضف المادة</button>
+
+        <p class="text-center">
+            <button class="btn btn-outline-primary" onclick="showCumulativeBox()">اضغط لحساب التراكمي</button>
+        </p>
+
         <ul id="subjectList" class="list-group my-3"></ul>
         <p class="fw-bold">إجمالي الساعات: <span id="totalHours">0</span></p>
         <button class="btn-modern btn-modern-secondary w-100" onclick="calculateGPA()">اضغط للحساب</button>
         <p class="fw-bold text-center mt-3">Your GPA is: <span id="gpaResult">-</span></p>
     </div>
-    <div class="copyright">
+
+    <div id="cumulativeBox" class="container box-style hidden">
+        <h4 class="text-center mb-4">حساب التراكمي</h4>
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <input type="number" step="0.01" class="form-control" id="prevGPA" placeholder="GPA السابق">
+            </div>
+            <div class="col-md-6">
+                <input type="number" class="form-control" id="prevHours" placeholder="عدد ساعات الـ GPA السابق">
+            </div>
+            <div class="col-md-6">
+                <input type="number" step="0.01" class="form-control" id="currentGPA" placeholder="GPA هذا الفصل">
+            </div>
+            <div class="col-md-6">
+                <input type="number" class="form-control" id="currentHours" placeholder="عدد ساعات هذا الفصل">
+            </div>
+        </div>
+        <button class="btn btn-success w-100" onclick="calculateCumulative()">احسب التراكمي</button>
+        <p class="fw-bold text-center mt-3 hidden" id="cumulativeResultBox">
+            التراكمي هو: <span id="cumulativeResult">-</span>
+        </p>
+        <div class="text-center mt-3">
+            <button class="btn btn-outline-secondary" onclick="backToMain()">رجوع للحساب العادي</button>
+        </div>
+    </div>
+
+    <div class="copyright text-center mt-4">
         <a href="https://www.facebook.com/profile.php?id=100009266123848" target="_blank">Adham Mohamed</a>
     </div>
+
     <script src="js.js"></script>
 </body>
 </html>
