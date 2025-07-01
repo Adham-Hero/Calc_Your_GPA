@@ -241,7 +241,35 @@ function calculateCumulative() {
     } else {
         let totalPoints = (prevGPA * prevHours) + (currentGPA * currentHours);
         let cumulative = (totalPoints / totalHours).toFixed(2);
-        document.getElementById("cumulativeResult").textContent = cumulative;
+
+        // تحويل القيمة الرقمية إلى تقدير حرفي
+        let letter;
+        let numeric = parseFloat(cumulative);
+        if (numeric === 4) {
+            letter = "A+";
+        } else if (numeric >= 3.7) {
+            letter = "A";
+        } else if (numeric >= 3.4) {
+            letter = "A-";
+        } else if (numeric >= 3.0) {
+            letter = "B+";
+        } else if (numeric >= 2.7) {
+            letter = "B";
+        } else if (numeric >= 2.3) {
+            letter = "C+";
+        } else if (numeric >= 2.0) {
+            letter = "C";
+        } else if (numeric >= 1.6) {
+            letter = "D+";
+        } else if (numeric >= 1.3) {
+            letter = "D";
+        } else if (numeric >= 1.0) {
+            letter = "D-";
+        } else {
+            letter = "F";
+        }
+
+        document.getElementById("cumulativeResult").textContent = `${cumulative} (${letter})`;
     }
 
     document.getElementById("cumulativeResultBox").classList.remove("hidden");
