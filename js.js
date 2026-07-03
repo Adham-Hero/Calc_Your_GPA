@@ -15,7 +15,7 @@ const courses = [
     { name: "الرعاية التمريضية الشاملة", hours: 2, level: 1, code: "NUR 106",},
     { name: "علم الأدوية", hours: 2, level: 1, code: "MED 105", },
     { name: "التثقيف الصحي", hours: 2, level: 1, code: "SUP 101",},
-    { name: "التفكير الناقد", hours: 2, level: 1, code: "GEN 102",},
+    { name: "التفكير الناقد", hours: 0, level: 1, code: "GEN 102",},
     { name: "تمريض البالغين I", hours: 3, level: 2, code: "NUR 201" },
     { name: "تمريض البالغين I (عملي)", hours: 4, level: 2, code: "CLN 201" },
     { name: "التقييم الصحي (نظري)", hours: 3, level: 2, code: "NUR 202" },
@@ -28,7 +28,6 @@ const courses = [
     { name: "جراحة عامة", hours: 2, level: 2, code: "MED 203" },
     { name: "أدوية تطبيقية", hours: 2, level: 2, code: "MED 204" },
     { name: "مبادئ إحصاء", hours: 2, level: 2, code: "SUP 203" },
-    { name: "سيادة الأعمال", hours: 2, level: 2, code: "GEN 202" },
     { name: "تمريض النساء والولادة", hours: 3, level: 3, code: "NUR 301" },
     { name: "تمريض النساء والولادة (عملي)", hours: 4, level: 3, code: "CLN 301" },
     { name: "تمريض الحالات الحرجة والطوارئ", hours: 3, level: 3, code: "NUR 302" },
@@ -71,7 +70,7 @@ const courses = [
     { name: "مبادئ التعليم", hours: 2, level: "مقرر اختياري", code: "ELEC 506" },
     { name: "منع الشيخوخة الصحية والأمراض المزمنة", hours: 2, level: "مقرر اختياري", code: "ELEC 507" },
     { name: "النمو اللغوي", hours: 2, level: "مقرر اختياري", code: "ELEC 508" },
-    { name: "ريادة اعمال", hours: 2, level: 2, code: "GEN 202" }
+    { name: "ريادة اعمال", hours: 0, level: 2, code: "GEN 202" }
 ];
 
 const subjectSelect = document.getElementById("subjectSelect");
