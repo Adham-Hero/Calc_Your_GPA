@@ -12,7 +12,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:30px 15px;
+    padding:30px 15px 90px;
     background:linear-gradient(135deg,#2563eb,#4f46e5,#7c3aed);
     background-size:300% 300%;
     animation:bgMove 12s ease infinite;
@@ -25,6 +25,13 @@ body{
     100%{background-position:0% 50%;}
 }
 
+.app-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 .container-box,
 .box-style{
     width:100%;
@@ -33,11 +40,10 @@ body{
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
     border:1px solid rgba(255,255,255,.2);
-    border-radius:22px;
+    border-radius:24px;
     padding:30px;
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.25);
     color:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
     animation:fadeUp .5s ease;
 }
 
@@ -52,11 +58,27 @@ body{
     }
 }
 
-h3,
-h4{
-    font-weight:700;
-    margin-bottom:25px;
+.header{
     text-align:center;
+    margin-bottom:30px;
+}
+
+.header i{
+    font-size:60px;
+    color:#ffd54f;
+}
+
+.header h2,
+.header h3{
+    margin-top:15px;
+    font-weight:700;
+    color:#fff;
+}
+
+.header p{
+    color:rgba(255,255,255,.8);
+    margin-top:10px;
+    font-size:15px;
 }
 
 .form-label{
@@ -69,14 +91,14 @@ h4{
     border:none;
     border-radius:14px;
     padding:12px 15px;
-    background:rgba(255,255,255,.9);
+    background:rgba(255,255,255,.95);
     transition:.3s;
 }
 
 .form-control:focus,
 .form-select:focus{
-    box-shadow:0 0 0 .25rem rgba(255,255,255,.25);
     border:none;
+    box-shadow:0 0 0 .25rem rgba(255,255,255,.25);
 }
 
 button{
@@ -114,29 +136,29 @@ button{
 }
 
 .btn-outline-primary{
-    color:white;
+    color:#fff;
     border:2px solid rgba(255,255,255,.6);
     background:transparent;
 }
 
 .btn-outline-primary:hover{
-    background:white;
+    background:#fff;
     color:#4f46e5;
 }
 
 .btn-outline-secondary{
+    color:#fff;
     border:2px solid rgba(255,255,255,.5);
-    color:white;
 }
 
 .btn-outline-secondary:hover{
-    background:white;
+    background:#fff;
     color:#333;
 }
 
 .btn-modern-secondary{
     background:linear-gradient(90deg,#06b6d4,#2563eb);
-    color:white;
+    color:#fff;
 }
 
 .btn-modern-secondary:hover{
@@ -151,20 +173,46 @@ button{
     border:none;
     border-radius:12px !important;
     margin-bottom:10px;
-    background:rgba(255,255,255,.9);
+    background:rgba(255,255,255,.92);
     color:#333;
     font-weight:600;
+    transition:.3s;
 }
 
-.fw-bold{
-    font-size:17px;
+.list-group-item:hover{
+    transform:translateX(4px);
+}
+
+.badge{
+    padding:10px 15px;
+    border-radius:12px;
+}
+
+.result-card{
+    margin-top:25px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.15);
+    text-align:center;
+}
+
+.result-card small{
+    display:block;
+    color:rgba(255,255,255,.8);
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+.result-card h1{
+    font-size:48px;
+    font-weight:700;
+    color:#ffd54f;
 }
 
 #gpaResult,
 #cumulativeResult{
     color:#ffd54f;
-    font-size:28px;
-    font-weight:bold;
 }
 
 .hidden{
@@ -173,25 +221,25 @@ button{
 
 .copyright{
     position:fixed;
-    bottom:15px;
+    bottom:20px;
     left:50%;
     transform:translateX(-50%);
+    padding:12px 25px;
+    border-radius:50px;
     background:rgba(255,255,255,.15);
     backdrop-filter:blur(10px);
-    padding:10px 22px;
-    border-radius:50px;
-    color:white;
+    color:#fff;
     font-size:15px;
 }
 
 .copyright a{
-    color:white;
+    color:#ffd54f;
     text-decoration:none;
     font-weight:700;
 }
 
 .copyright a:hover{
-    color:#ffd54f;
+    color:#fff;
 }
 
 ::-webkit-scrollbar{
@@ -207,8 +255,6 @@ button{
     background:#666;
 }
 
-/* Tablet */
-
 @media(max-width:768px){
 
 .container-box,
@@ -217,15 +263,17 @@ button{
     padding:25px;
 }
 
+.result-card h1{
+    font-size:42px;
 }
 
-/* Mobile */
+}
 
 @media(max-width:480px){
 
 body{
     align-items:flex-start;
-    padding:20px 10px 80px;
+    padding:20px 10px 90px;
 }
 
 .container-box,
@@ -234,18 +282,31 @@ body{
     padding:20px;
 }
 
+.header i{
+    font-size:50px;
+}
+
+.header h2,
+.header h3{
+    font-size:26px;
+}
+
 .btn,
 .btn-modern{
     font-size:15px;
 }
 
-#gpaResult,
-#cumulativeResult{
-    font-size:24px;
+.result-card{
+    padding:20px;
+}
+
+.result-card h1{
+    font-size:36px;
 }
 
 .copyright{
     width:90%;
+    text-align:center;
     font-size:14px;
 }
 
