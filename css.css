@@ -1,27 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
     background-color: #f8f9fa;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
 }
+
 .container-box {
     background-color: #d3d3d3;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .btn-modern {
     border: none;
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
+
+.btn-modern:hover {
+    opacity: 0.9;
+}
+
 .btn-modern-primary {
     background-color: #28a745;
     color: white;
 }
+
 .btn-modern-secondary {
     background-color: #007bff;
     color: white;
@@ -33,26 +56,49 @@ body {
     padding: 10px;
     background-color: #2c3e50;
     color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
+a,
 a:hover {
     text-decoration: none;
     color: inherit;
 }
 
-.hidden { display: none; }
+.hidden {
+    display: none;
+}
 
 .box-style {
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 10px;
     background-color: #f9f9f9;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container-box {
+        max-width: 90%;
+        padding: 18px;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .container-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .btn-modern {
+        font-size: 15px;
+        padding: 10px;
+    }
 }
